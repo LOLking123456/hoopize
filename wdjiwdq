@@ -1,0 +1,717 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local PhantomForcesWindow = Library:NewWindow("Hoops Life GUI")
+
+local KillingCheats = PhantomForcesWindow:NewSection("Legend HandlesYT")
+
+KillingCheats:CreateButton("(WORKING) Aimbot", function()
+_G.Keybind = Enum.KeyCode.E
+
+local UIS = game:GetService("UserInputService")
+local RUN = game:GetService("RunService")
+local Storage = game:GetService("ReplicatedStorage")
+local Path = Storage:WaitForChild("Remotes").Shoot
+local Player = game.Players.LocalPlayer
+local Character = Player.Character or Player.CharacterAdded:Wait()
+local Cheat
+
+local Cheat_AutoTime = function()
+Character.Meter.SurfaceGui.ImageLabel.Shoot.Size = UDim2.new(1, 0, 1, 0)
+end
+
+UIS.InputBegan:Connect(function(input, gpe)
+if input.KeyCode == _G.Keybind and not gpe then
+Cheat = RUN.Stepped:Connect(Cheat_AutoTime)
+end
+end)
+
+UIS.InputEnded:Connect(function(input, gpe)
+if input.KeyCode == _G.Keybind and not gpe then
+wait(3)
+Cheat:Disconnect()
+Character.Meter.SurfaceGui.ImageLabel.Shoot.Size = UDim2.new(1, 0, 0, 0)
+end
+end)
+end)
+
+KillingCheats:CreateButton("Anti Contest", function()
+    local Number = 51
+  workspace.Gravity = tonumber(Number) or 196.2 -- falls back to default gravity if its not a number or a parsable number
+local mouse = game.Players.LocalPlayer:GetMouse()
+		local parted = false
+	
+	
+		local part = Instance.new("Part",game.Lighting)
+		part.Anchored = true
+		part.Size = Vector3.new(700,1,700)
+		part.Transparency = 0.9
+		part.TopSurface = "Smooth"
+	
+	
+	
+	
+		mouse.KeyDown:connect(function(key)
+			if key == "e" then
+				game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()*CFrame.new(0, 20,0))
+			end
+		end)
+end)
+
+KillingCheats:CreateButton("2x Dunk Height", function()
+game.Workspace.Courts.Court_1.OutOfBounds:Destroy()
+game.Workspace.Courts.Court_2.OutOfBounds:Destroy()
+game.Workspace.Courts.Court_3.OutOfBounds:Destroy()
+game.Workspace.Courts.Court_4.OutOfBounds:Destroy()
+game.Workspace.Courts.Court_5.OutOfBounds:Destroy()
+game.Workspace.Courts.Court_6.OutOfBounds:Destroy()
+end)
+
+KillingCheats:CreateButton("Anti Ankle Breaker", function()
+game:GetService("Players").LocalPlayer.Values.Ankles.Value = true
+end)
+
+KillingCheats:CreateToggle("Streamer Mode", function(value)
+loadstring(game:HttpGet('https://pastebin.com/raw/inik7xjG'))()
+end)
+
+KillingCheats:CreateToggle("Remove Face", function(value)
+game.Players.LocalPlayer.Character.Head.Decal:Destroy()
+end)
+
+KillingCheats:CreateButton("Inf Stamina", function()
+game.Players.LocalPlayer.Character.Meter.SurfaceGui.ImageLabel.Sprint.ImageLabel.Visible = false
+end)
+
+KillingCheats:CreateSlider("Boost Acceleration", 1, 500, 0, false, function(v)
+game:GetService("Players").LocalPlayer.Attributes.Speed.Value = (v)
+end)
+
+KillingCheats:CreateSlider("Boost LateralQuickness", 1, 300, 0, false, function(v)
+game:GetService("Players").LocalPlayer.Attributes.LateralQuickness.Value = (v)
+end)
+
+KillingCheats:CreateSlider("Hitbox Size OP", 0, 8, 0, false, function(v)
+ _G.Resized = false
+
+	local Player = game:GetService('Players').LocalPlayer
+			_G.Resized = not _G.Resized
+			if _G.Resized == true then
+				Player.Character['LeftHand'].Size = Vector3.new(5, (v), 5)
+				Player.Character['RightHand'].Size = Vector3.new(5, (v), 5)
+end
+end)
+
+KillingCheats:CreateButton("Ball Mag", function()
+ local Size = 4 -- if you want to look legit i recommend 2.5
+
+game.RunService.Heartbeat:Connect(function()
+   for i, v in pairs(workspace:GetChildren()) do
+       if (v.Name == "Basketball" and v ~= nil) then
+           v.Size = Vector3.new(Size, Size, Size)
+           v.Transparency = 0.4
+           v.Material = Enum.Material.SmoothPlastic
+       end
+   end
+end)
+end)
+
+
+KillingCheats:CreateButton("L To Fly", function()
+local plr = game.Players.LocalPlayer
+local mouse = plr:GetMouse()
+
+localplayer = plr
+
+if workspace:FindFirstChild("Core") then
+workspace.Core:Destroy()
+end
+
+local Core = Instance.new("Part")
+Core.Name = "Core"
+Core.Size = Vector3.new(0.05, 0.05, 0.05)
+
+spawn(function()
+Core.Parent = workspace
+local Weld = Instance.new("Weld", Core)
+Weld.Part0 = Core
+Weld.Part1 = localplayer.Character.LowerTorso
+Weld.C0 = CFrame.new(0, 0, 0)
+end)
+
+workspace:WaitForChild("Core")
+
+local torso = workspace.Core
+flying = true
+local speed=10
+local keys={a=false,d=false,w=false,s=false}
+local e1
+local e2
+local function start()
+local pos = Instance.new("BodyPosition",torso)
+local gyro = Instance.new("BodyGyro",torso)
+pos.Name="EPIXPOS"
+pos.maxForce = Vector3.new(math.huge, math.huge, math.huge)
+pos.position = torso.Position
+gyro.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+gyro.cframe = torso.CFrame
+repeat
+wait()
+localplayer.Character.Humanoid.PlatformStand=true
+local new=gyro.cframe - gyro.cframe.p + pos.position
+if not keys.w and not keys.s and not keys.a and not keys.d then
+speed=5
+end
+if keys.w then
+new = new + workspace.CurrentCamera.CoordinateFrame.lookVector * speed
+speed=speed+0
+end
+if keys.s then
+new = new - workspace.CurrentCamera.CoordinateFrame.lookVector * speed
+speed=speed+0
+end
+if keys.d then
+new = new * CFrame.new(speed,0,0)
+speed=speed+0
+end
+if keys.a then
+new = new * CFrame.new(-speed,0,0)
+speed=speed+0
+end
+if speed>10 then
+speed=5
+end
+pos.position=new.p
+if keys.w then
+gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(-math.rad(speed*0),0,0)
+elseif keys.s then
+gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(math.rad(speed*0),0,0)
+else
+gyro.cframe = workspace.CurrentCamera.CoordinateFrame
+end
+until flying == false
+if gyro then gyro:Destroy() end
+if pos then pos:Destroy() end
+flying=false
+localplayer.Character.Humanoid.PlatformStand=false
+speed=10
+end
+e1=mouse.KeyDown:connect(function(key)
+if not torso or not torso.Parent then flying=false e1:disconnect() e2:disconnect() return end
+if key=="w" then
+keys.w=true
+elseif key=="s" then
+keys.s=true
+elseif key=="a" then
+keys.a=true
+elseif key=="d" then
+keys.d=true
+elseif key=="l" then
+if flying==true then
+flying=false
+else
+flying=true
+start()
+end
+end
+end)
+e2=mouse.KeyUp:connect(function(key)
+if key=="w" then
+keys.w=false
+elseif key=="s" then
+keys.s=false
+elseif key=="a" then
+keys.a=false
+elseif key=="d" then
+keys.d=false
+end
+end)
+start()
+end)
+
+KillingCheats:CreateButton("Bring Ball (P) ONLY GYM", function()
+local UIS = game:GetService('UserInputService')
+local plr = game.Players.LocalPlayer
+local Char = plr.Character or plr.CharacterAded:Wait()
+local Key = 'P'
+UIS.InputBegan:Connect(function(Input, IsTyping)
+if IsTyping then return end
+local KeyPressed = Input.KeyCode
+if KeyPressed == Enum.KeyCode[Key] then
+game.Workspace.Basketball.CFrame = Game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+end
+end)
+end)
+
+KillingCheats:CreateSlider("Player HipHeight", 2, 20, 0, false, function(v)
+Float_Height = (v) -- Your float height | 5 is default
+
+local i=1
+G=game;
+_=wait;
+p=G:GetService("Players").LocalPlayer.Character
+p:FindFirstChild("Humanoid").HipHeight = Float_Height
+for i=1,i do
+repeat p:FindFirstChild("Humanoid").HipHeight=Float_Height-n _(t)p:FindFirstChild("Humanoid").HipHeight=Float_Height+n _(t) until
+p:FindFirstChild("Humanoid").Health == 0
+end
+end)
+
+KillingCheats:CreateButton("N To Speed", function()
+NHeld = false
+		local gcheck = true
+		urspeed = -0.3 -- The lower it is the faster. So don't worry about it being minus 1
+	
+	
+		function ChangeFaster(inputObject, gameProcessedEvent)
+			if inputObject.KeyCode == Enum.KeyCode.Minus and gameProcessedEvent == false then        
+				urspeed = urspeed - 0.1
+			end
+		end
+	
+	
+	
+		function ChangeSlower(inputObject, gameProcessedEvent)
+			if inputObject.KeyCode == Enum.KeyCode.Equals and gameProcessedEvent == false then        
+				urspeed = urspeed + 0.1
+			end
+		end
+	
+	
+	
+		function GChecker(inputObject, gameProcessedEvent)
+			if inputObject.KeyCode == Enum.KeyCode.K and gameProcessedEvent == false then        
+				if gcheck == false then
+					gcheck = true
+				elseif gcheck == true then
+					gcheck = false
+				end
+	
+			end
+		end
+	
+		game:GetService("UserInputService").InputBegan:connect(GChecker)
+	
+	
+	
+		function PressV(inputObject,gameProcessedEvent)
+			if inputObject.KeyCode == Enum.KeyCode.N and gameProcessedEvent == false and gcheck == true then
+				NHeld = true
+			end
+		end
+	
+		function ReleaseV(inputObject,gameProcessed)
+			if inputObject.KeyCode == Enum.KeyCode.N then
+				NHeld = false
+			end
+		end
+	
+		game:GetService("UserInputService").InputBegan:connect(PressV)
+		game:GetService("UserInputService").InputEnded:connect(ReleaseV)
+		game:GetService("UserInputService").InputBegan:connect(ChangeFaster)
+		game:GetService("UserInputService").InputBegan:connect(ChangeSlower)
+	
+	
+		game:GetService('RunService').Stepped:connect(function()
+			if NHeld == true then
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,urspeed)
+			end
+		end)NHeld = false
+		local gcheck = true
+		urspeed = -0.3 -- The lower it is the faster. So don't worry about it being minus 1
+	
+	
+		function ChangeFaster(inputObject, gameProcessedEvent)
+			if inputObject.KeyCode == Enum.KeyCode.Minus and gameProcessedEvent == false then        
+				urspeed = urspeed - 0.1
+			end
+		end
+	
+	
+	
+		function ChangeSlower(inputObject, gameProcessedEvent)
+			if inputObject.KeyCode == Enum.KeyCode.Equals and gameProcessedEvent == false then        
+				urspeed = urspeed + 0.1
+			end
+		end
+	
+	
+	
+		function GChecker(inputObject, gameProcessedEvent)
+			if inputObject.KeyCode == Enum.KeyCode.K and gameProcessedEvent == false then        
+				if gcheck == false then
+					gcheck = true
+				elseif gcheck == true then
+					gcheck = false
+				end
+	
+			end
+		end
+	
+		game:GetService("UserInputService").InputBegan:connect(GChecker)
+	
+	
+	
+		function PressV(inputObject,gameProcessedEvent)
+			if inputObject.KeyCode == Enum.KeyCode.N and gameProcessedEvent == false and gcheck == true then
+				NHeld = true
+			end
+		end
+	
+		function ReleaseV(inputObject,gameProcessed)
+			if inputObject.KeyCode == Enum.KeyCode.N then
+				NHeld = false
+			end
+		end
+	
+		game:GetService("UserInputService").InputBegan:connect(PressN)
+		game:GetService("UserInputService").InputEnded:connect(ReleaseN)
+		game:GetService("UserInputService").InputBegan:connect(ChangeFaster)
+		game:GetService("UserInputService").InputBegan:connect(ChangeSlower)
+	
+	
+		game:GetService('RunService').Stepped:connect(function()
+			if NHeld == true then
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,urspeed)
+			end
+		end)
+end)
+	
+	
+	KillingCheats:CreateSlider("LongArms Size ", 1, 20, 0, false, function(v)
+ _G.Resized = false
+
+	local Player = game:GetService('Players').LocalPlayer
+			_G.Resized = not _G.Resized
+			if _G.Resized == true then
+				Player.Character['LeftHand'].Size = Vector3.new(1, (v), 1)
+				Player.Character['RightHand'].Size = Vector3.new(1, (v), 1)
+end
+end)
